@@ -1,0 +1,22 @@
+<div>
+  <h1>Check out my pups</h1>
+  <br />
+  <h2>Fill out this form to add a new puppy</h2>
+<form method="post" action="/addPuppy">
+  <span>Puppy name: <input type="text" name="puppyName"/></span>
+  <span>Brain size: <input type="text" name="brain" /></span>
+  <span>Puppy image url: <input type="text" name="imageUrl"/></span>
+  <span>Owner: <input type="text" name="ownerName" /></span>
+  <button type="submit">Add this puppy</button>
+</form>
+
+</div>
+
+<div>
+  {{#each puppies}}
+  <span><h3>{{this.name}}</h3></span>
+  <span>Brain size: {{this.brain}}</span><br />
+  <span>Owner Name: {{this.owner.username}}</span><br />
+  <span><img src="{{this.imageUrl}}" /></span>
+  {{/each}}
+</div>
